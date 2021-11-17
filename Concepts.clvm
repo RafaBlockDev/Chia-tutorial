@@ -76,4 +76,14 @@
 
     $ brun '(/ (q . 20) (q . 11))'
     1
+
+    El operador matemático final es igual que actúa de manera similar a == en otros idiomas.
+
+    $ brun '(= (q . 5) (q . 6))'
+    ()
+
+    $ brun '(= (q . 5) (q . 5))'
+    1
+
+    Booleanos
 */
