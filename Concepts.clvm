@@ -37,4 +37,22 @@
 
     $ brun '(q . (80 90 100))'
     (80 90 100)
+
+    $ brun '(i (= (q . 50) (q . 50)) (+ (q . 40) (q . 30)) (q . 20))' '()'  70
+
+    Los programas en CLVM tienden a construirse de esta manera. Los programas más pequeños se ensamblan para crear un programa más grande
+
+    Operadores de lista:
+    f devuelve el primer elemento de una lista pasada.
+
+    $ brun '(f (q . (80 90 100)))'
+    80
+    r devuelve todos los elementos de una lista excepto el primero.
+
+    $ brun '(r (q . (80 90 100)))'
+    (90 100)
+    c antepone un elemento a una lista
+
+    $ brun '(c (q . 70) (q . (80 90 100)))'
+    (70 80 90 100)
 */
