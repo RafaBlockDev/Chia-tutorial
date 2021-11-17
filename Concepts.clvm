@@ -85,11 +85,36 @@
     $ brun '(= (q . 5) (q . 5))'
     1
 
-    Booleanos
+    Booleanos:
     En este idioma, se ()evalúa una lista vacía False. Cualquier otro valor se evalúa True, aunque internamente Truese representa con 1.
     $ brun '(= (q . 100) (q . 90))'
     ()
 
     $ brun '(= (q . 100) (q . 100))'
     1
-*/
+
+    Control de flujo:
+    El ioperador toma la forma (i A B C)y actúa como una declaración if que evalúa Bsi Aes Verdadero y lo Ccontrario.
+
+    $ brun '(i (q . 0) (q . 70) (q . 80))'
+    80
+
+    $ brun '(i (q . 1) (q . 70) (q . 80))'
+    70
+
+    $ brun '(i (q . 12) (q . 70) (q . 80))'
+    70
+
+    $ brun '(i () (q . 70) (q . 80))'
+    80
+
+    Variables de entorno
+    $ brun '1' '("this" "is the" "environement")'
+    ("this" "is the" "environment")
+
+    $ brun '(f 1)' '(80 90 100 110)'
+    80
+
+    $ brun '(r 1)' '(80 90 100 110)'
+    (90 100 110)
+    */
