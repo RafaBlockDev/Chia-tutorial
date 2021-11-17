@@ -1,0 +1,40 @@
+/* Conceptos basicos de CLVM 
+    Valores CLVM:
+    Atomos:
+    Cadena de bytes
+    Inmutable
+    Decimal, hexadecimal (0x), y como cadena (")
+
+    Cons: 
+    Separados por un (.)
+    (200 . "hello")
+    ("hello" . ("world" . "!!!"))
+    Una caja de contras siempre tiene dos elementos.
+
+    Listas:
+    Encerradas en un parentesis
+    (200 300 "hello" "world")
+    ("hello" ("nested" "list") ("world"))
+    Una lista es una representacion de cajas de contras consecutivas terminadas en un atomo nulo (). Las siguientes expresiones son iguales.
+    (200 . (300 . (400 . ())))
+    (200 300 400)
+
+    Citando:
+    Para interpretar a un atomo como un valor, necesitamos citarlo (q). El primer elemento debe ser q
+    (q . 100)
+
+    Listas y programas:
+    Una lista es cualquier grupo ordenado, separado por espacion, de uno o mas elementos.
+    (70 80 90 100) (0xf00db "hello")
+    Las listas tambien pueden contener otras listas como ("list" "list" ("sublist" "sublist" ("sub-sublist")) "list")
+
+    Para que una lista sea un programa válido:
+
+    1. El primer elemento de la lista debe ser un operador válido
+    2. Todos los elementos posteriores al primero deben ser un programa válido.
+
+    La regla 2 es la razón por la que los valores literales y las listas que no son de programa deben citarse utilizando q . .
+
+    $ brun '(q . (80 90 100))'
+    (80 90 100)
+*/
