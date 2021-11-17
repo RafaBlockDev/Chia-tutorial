@@ -86,4 +86,10 @@
     1
 
     Booleanos
+    En este idioma, se ()evalúa una lista vacía False. Cualquier otro valor se evalúa True, aunque internamente Truese representa con 1.
+    $ brun '(= (q . 100) (q . 90))'
+    ()
+
+    $ brun '(= (q . 100) (q . 100))'
+    1
 */
