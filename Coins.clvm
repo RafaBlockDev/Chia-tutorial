@@ -1,0 +1,13 @@
+Monedas #
+El cuerpo de una moneda se compone de 3 piezas de información. Aquí está el código real que define una moneda:
+
+class Coin:
+    parent_coin_info: bytes32
+    puzzle_hash: bytes32
+    amount: uint64
+El ID de su padre
+El árbol hash de su rompecabezas (también conocido como puzzlehash)
+La cantidad que vale
+Para construir un ID de moneda, simplemente tome el hash de estas 3 piezas de información concatenadas en orden.
+
+coinID == sha256(parent_ID + puzzlehash + amount)
